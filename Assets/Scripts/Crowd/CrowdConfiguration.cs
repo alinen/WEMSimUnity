@@ -6,6 +6,16 @@ namespace Crowd {
     /**
      * Number of agents in the crowd.
      */
-    public int numAgents;
+    public int NumAgents { get; private set; }
+
+    /**
+     * Constructor.
+     *
+     * @param int numAgents
+     *   The number of agents in the crowd.
+     */
+    public CrowdConfiguration(int numAgents) {
+      this.NumAgents = numAgents;
+    }
   }
 }
