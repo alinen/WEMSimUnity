@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,11 @@ namespace Crowd {
     public int NumAgents;
 
     /**
+     * List of agent distributions for the crowd.
+     */
+    public List<AgentDistribution> AgentDistributions;
+
+    /**
      * Point 1 of the area in which the agents can be drawn.
      */
     public Vector2 Point1;
@@ -18,15 +24,11 @@ namespace Crowd {
      * Point 2 of the area in which the agents can be drawn.
      */
     public Vector2 Point2;
+  }
 
-    /**
-     * Constructor.
-     *
-     * @param int numAgents
-     *   The number of agents in the crowd.
-     */
-    public CrowdConfiguration(int numAgents) {
-      this.NumAgents = numAgents;
-    }
+  [Serializable]
+  public class AgentDistribution {
+    public GameObject AgentTemplate;
+    public float Distribution;
   }
 }
