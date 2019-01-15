@@ -27,7 +27,7 @@ namespace Crowd {
       this.config = config;
       this.gameObject = gameObject;
 
-      this.applyConfigToObject();
+      //this.applyConfigToObject();
     }
 
     /**
