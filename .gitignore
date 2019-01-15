@@ -4,8 +4,14 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+[Ll]ogs
 Assets/AssetStoreTools*
 Packages
+*.fbm
+*.fbm.meta
+Materials
+Materials.meta
+*.svn
 
 # Visual Studio cache directory
 .vs/
@@ -43,4 +49,5 @@ Assets/StreamingAssets/crashlytics-build.properties
 *~
 *.swp
 *.swo
+
 

@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 8f5bbf4bd0e35a249a4a5ba3820a5be7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: dana:Head
+    100004: dana:HeadTop_End
+    100006: dana:Hips
+    100008: dana:LeftArm
+    100010: dana:LeftFoot
+    100012: dana:LeftFootToeBase_End
+    100014: dana:LeftForeArm
+    100016: dana:LeftHand
+    100018: dana:LeftHandIndex1
+    100020: dana:LeftHandIndex2
+    100022: dana:LeftHandIndex3_End
+    100024: dana:LeftHandThumb1
+    100026: dana:LeftHandThumb2_End
+    100028: dana:LeftInHandThumb
+    100030: dana:LeftLeg
+    100032: dana:LeftShoulder
+    100034: dana:LeftToeBase
+    100036: dana:LeftUpLeg
+    100038: dana:Neck
+    100040: dana:Neck1
+    100042: dana:RightArm
+    100044: dana:RightFoot
+    100046: dana:RightFootToeBase_End
+    100048: dana:RightForeArm
+    100050: dana:RightHand
+    100052: dana:RightHandIndex1
+    100054: dana:RightHandIndex2
+    100056: dana:RightHandIndex3_End
+    100058: dana:RightHandThumb1
+    100060: dana:RightHandThumb2_End
+    100062: dana:RightInHandThumb
+    100064: dana:RightLeg
+    100066: dana:RightShoulder
+    100068: dana:RightToeBase
+    100070: dana:RightUpLeg
+    100072: dana:Spine
+    100074: dana:Spine1
+    100076: dana:Spine2
+    100078: dana_Casual_Female_Lod_0
+    400000: //RootNode
+    400002: dana:Head
+    400004: dana:HeadTop_End
+    400006: dana:Hips
+    400008: dana:LeftArm
+    400010: dana:LeftFoot
+    400012: dana:LeftFootToeBase_End
+    400014: dana:LeftForeArm
+    400016: dana:LeftHand
+    400018: dana:LeftHandIndex1
+    400020: dana:LeftHandIndex2
+    400022: dana:LeftHandIndex3_End
+    400024: dana:LeftHandThumb1
+    400026: dana:LeftHandThumb2_End
+    400028: dana:LeftInHandThumb
+    400030: dana:LeftLeg
+    400032: dana:LeftShoulder
+    400034: dana:LeftToeBase
+    400036: dana:LeftUpLeg
+    400038: dana:Neck
+    400040: dana:Neck1
+    400042: dana:RightArm
+    400044: dana:RightFoot
+    400046: dana:RightFootToeBase_End
+    400048: dana:RightForeArm
+    400050: dana:RightHand
+    400052: dana:RightHandIndex1
+    400054: dana:RightHandIndex2
+    400056: dana:RightHandIndex3_End
+    400058: dana:RightHandThumb1
+    400060: dana:RightHandThumb2_End
+    400062: dana:RightInHandThumb
+    400064: dana:RightLeg
+    400066: dana:RightShoulder
+    400068: dana:RightToeBase
+    400070: dana:RightUpLeg
+    400072: dana:Spine
+    400074: dana:Spine1
+    400076: dana:Spine2
+    400078: dana_Casual_Female_Lod_0
+    2100000: 'Material #51'
+    4300000: dana_Casual_Female_Lod_0
+    9500000: //RootNode
+    13700000: dana_Casual_Female_Lod_0
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
