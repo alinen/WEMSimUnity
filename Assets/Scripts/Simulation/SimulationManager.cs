@@ -7,6 +7,9 @@ namespace Simulation {
 
   public class SimulationManager : MonoBehaviour {
 
+    /**
+     * List of crowd managers in the environment.
+     */
     List<CrowdManager> crowdManagers = new List<CrowdManager> ();
 
     /**
@@ -32,6 +35,7 @@ namespace Simulation {
      */
     private void createAgents() {
       foreach (CrowdManager crowdManager in this.crowdManagers) {
+        crowdManager.Setup();
         crowdManager.CreateAgents();
       }
     }

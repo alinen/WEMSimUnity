@@ -4,10 +4,21 @@ using UnityEngine;
 namespace Crowd {
   public class CrowdManager : MonoBehaviour {
 
+    /**
+     * The configuration object for the crowd.
+     */
     public CrowdConfiguration config;
 
+    /**
+     * The agents in the crowd.
+     */
     List<Agent> agents = new List<Agent> ();
 
+    /**
+     * A dictionary for distribution of a type of agent.
+     *
+     * @see setupDistributionMap
+     */
     Dictionary<int, Agent> distributionMap = new Dictionary<int, Agent> ();
 
     /**
@@ -16,14 +27,14 @@ namespace Crowd {
     System.Random random = new System.Random();
 
     /**
-     * The Start() method.
+     * Sets up the crowd manager.
      */
-    private void Start() {
+    public void Setup() {
       this.setupDistributionMap();
 
       // Reset the position of the initial agents.
       // TODO: will be removed with a more complex positioning of characters.
-      for (int i = 0; i < config.AgentDistributions.Count; ++i) {
+      for (int i = 0; i < config.AgentDistributions.Count; i++) {
         AgentDistribution dist = config.AgentDistributions[i];
 
         float x = getRandomPosition(config.Point1.x, config.Point2.x);
