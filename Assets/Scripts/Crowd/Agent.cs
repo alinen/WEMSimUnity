@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Crowd {
 
@@ -26,8 +27,6 @@ namespace Crowd {
     public Agent(AgentConfig config, GameObject gameObject) {
       this.config = config;
       this.gameObject = gameObject;
-
-      //this.applyConfigToObject();
     }
 
     /**
@@ -43,13 +42,6 @@ namespace Crowd {
     }
 
     /**
-     * Applies the properties set in the configuration object.
-     */
-    public void applyConfigToObject() {
-      this.applyMaterial();
-    }
-
-    /**
      * @{inheritdoc}
      */
     public object Clone() {
@@ -59,15 +51,6 @@ namespace Crowd {
       clone.config = (AgentConfig) config.Clone();
 
       return clone;
-    }
-
-    /**
-     * Applies the material set in the configuration object.
-     */
-    private void applyMaterial() {
-      Renderer rend = gameObject.GetComponent<Renderer> ();
-
-      rend.material.color = config.Color;
     }
 
   }
