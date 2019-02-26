@@ -1,6 +1,7 @@
+using Wem.Behaviour;
 
 namespace Wem.Activity {
-  interface Activity {
+  interface ActivityInterface {
 
   }
 }
