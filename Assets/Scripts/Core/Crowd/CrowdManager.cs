@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Crowd {
+namespace Wem.Crowd {
   public class CrowdManager : MonoBehaviour {
 
     /**

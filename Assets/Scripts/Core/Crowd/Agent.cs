@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Crowd {
+namespace Wem.Crowd {
 
   public class Agent : ICloneable {
 

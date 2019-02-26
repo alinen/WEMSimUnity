@@ -1,9 +1,9 @@
-using Crowd;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Wem.Crowd;
 
-namespace Simulation {
+namespace Wem.Simulation {
 
   public class SimulationManager : MonoBehaviour {
 

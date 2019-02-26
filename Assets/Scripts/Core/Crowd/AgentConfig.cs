@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Crowd {
+namespace Wem.Crowd {
 
   public class AgentConfig : ICloneable {
 
