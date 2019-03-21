@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Wem.Crowd {
+namespace Wem.Group {
 
   public class Agent : ICloneable {
 
@@ -19,7 +19,7 @@ namespace Wem.Crowd {
     /**
      * Constructor.
      *
-     * @param Crowd.AgentConfig config.
+     * @param Group.AgentConfig config.
      *   The agent configuration object for the agent.
      * @param UnityEngine.GameObject template.
      *   The game objec for the agent.

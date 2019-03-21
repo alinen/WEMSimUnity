@@ -1,39 +1,60 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
-using Wem.Behaviour;
 
 namespace Wem.Activity {
 
-  public class Activity : MonoBehaviour, ActivityInterface {
+  public class Activity : ActivityInterface {
 
-    public WemBehaviour RootBehaviour;
-    bool update = true;
-    HashSet<string> printedNodes = new HashSet<string> ();
+    /**
+     * The behavior ID.
+     */
+    protected string id;
 
-    void Update() {
-      if (update) {
-        this.printActivity(this.RootBehaviour);
+    /**
+     * The adjacent nodes.
+     */
+    protected List<EdgeConfig> adjacents = new List<EdgeConfig> ();
 
-        update = false;
+    /**
+     * {@inheritdoc}
+     */
+    public void AddEdge(EdgeConfig node, bool bidirectional = false) {
+
+      adjacents.Add(node);
+
+      if (bidirectional) {
+        EdgeConfig config = new EdgeConfig(this, 0.5);
+
+        node.Adjacent.AddEdge(config);
       }
     }
 
-    protected void printActivity(WemBehaviourInterface root, string indent = "") {
-      printedNodes.Add(root.GetId());
+    /**
+     * {@inheritdoc}
+     */
+    public void RemoveEdge(ActivityInterface node) {
+      for (int i = 0; i < adjacents.Count; i++) {
+        ActivityInterface adjNode = adjacents[i].Adjacent;
 
-      if (root.Equals(RootBehaviour)) {
-        Debug.Log(indent + root.GetId() + " -> ");
-      }
-
-      indent += "      ";
-
-      foreach (var adj in root.GetAdjacents()) {
-        Debug.Log(indent + adj.Adjacent.GetId() + " -> ");
-
-        if (!printedNodes.Contains(adj.Adjacent.GetId())) {
-          printActivity(adj.Adjacent, indent);
+        if (node.Equals(adjNode)) {
+          adjacents.RemoveAt(i);
         }
       }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public string GetId() {
+      return this.id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public List<EdgeConfig> GetAdjacents() {
+      return this.adjacents;
     }
 
   }

@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Wem.Crowd {
-  public class CrowdConfiguration : MonoBehaviour {
+namespace Wem.Group {
+  public class GroupConfiguration : MonoBehaviour {
 
     /**
-     * Number of agents in the crowd.
+     * Number of agents in the group.
      */
     public int NumAgents;
 
     /**
-     * List of agent distributions for the crowd.
+     * List of agent distributions for the group.
      */
     public List<AgentDistribution> AgentDistributions;
 

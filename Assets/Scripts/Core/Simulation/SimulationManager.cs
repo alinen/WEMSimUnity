@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Wem.Crowd;
+using Wem.Group;
 
 namespace Wem.Simulation {
 
   public class SimulationManager : MonoBehaviour {
 
     /**
-     * List of crowd managers in the environment.
+     * List of group managers in the environment.
      */
-    List<CrowdManager> crowdManagers = new List<CrowdManager> ();
+    List<GroupManager> groupManagers = new List<GroupManager> ();
 
     /**
      * The Start() method.
@@ -24,9 +24,9 @@ namespace Wem.Simulation {
      * Populates the crowdManagers property.
      */
     private void initCrowdManagers() {
-      GameObject[] crowds = GameObject.FindGameObjectsWithTag("CrowdManager");
+      GameObject[] crowds = GameObject.FindGameObjectsWithTag("GroupManager");
       foreach (GameObject crowd in crowds) {
-        crowdManagers.Add(crowd.GetComponent<CrowdManager> ());
+        groupManagers.Add(crowd.GetComponent<GroupManager> ());
       }
     }
 
@@ -34,9 +34,9 @@ namespace Wem.Simulation {
      * Creates and clones each agent.
      */
     private void createAgents() {
-      foreach (CrowdManager crowdManager in this.crowdManagers) {
-        crowdManager.Setup();
-        crowdManager.CreateAgents();
+      foreach (GroupManager groupManager in this.groupManagers) {
+        groupManager.Setup();
+        groupManager.CreateAgents();
       }
     }
 

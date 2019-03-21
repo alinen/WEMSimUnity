@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Wem.Behaviour
+namespace Wem.Activity
 {
 
-  public class GoTo : WemBehaviour {
+  public class GoTo : Activity {
 
     public Vector3 dest;
 
-    void Start() {
+    /*void Start() {
       this.id = "goto";
-      WemBehaviourInterface behaviour = gameObject.GetComponent<Hover> ();
+      ActivityInterface behaviour = gameObject.GetComponent<Hover> ();
       AdjacentConfig config = new AdjacentConfig(behaviour, 0.5);
       AddEdge(config, true);
 
@@ -22,7 +22,7 @@ namespace Wem.Behaviour
 
       NavMeshAgent agent = gameObject.GetComponent<NavMeshAgent> ();
       agent.SetDestination(this.dest);
-    }
+    }*/
 
   }
 

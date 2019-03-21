@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Wem.Behaviour {
+namespace Wem.Activity {
 
-  public class Hover : WemBehaviour {
+  public class Hover : Activity {
 
     public float rate = 1.0f;
     Vector3 startPosition;

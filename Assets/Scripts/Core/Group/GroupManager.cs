@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Wem.Crowd {
-  public class CrowdManager : MonoBehaviour {
+namespace Wem.Group {
+  public class GroupManager : MonoBehaviour {
 
     /**
-     * The configuration object for the crowd.
+     * The configuration object for the group.
      */
-    public CrowdConfiguration config;
+    public GroupConfiguration config;
 
     /**
-     * The agents in the crowd.
+     * The agents in the group.
      */
     List<Agent> agents = new List<Agent> ();
 
@@ -27,7 +27,7 @@ namespace Wem.Crowd {
     System.Random random = new System.Random();
 
     /**
-     * Sets up the crowd manager.
+     * Sets up the group manager.
      */
     public void Setup() {
       this.setupDistributionMap();
@@ -52,7 +52,7 @@ namespace Wem.Crowd {
       for (int i = 0; i < config.NumAgents - config.AgentDistributions.Count; ++i) {
         Agent agent = getRamdonAgent();
 
-        // Clones and add a copy to the crowd.
+        // Clones and add a copy to the group.
         Agent copy = cloneAgent(agent);
         agents.Add(copy);
       }
@@ -100,12 +100,12 @@ namespace Wem.Crowd {
     }
 
     /**
-     * Creates a single agent for the crowd.
+     * Creates a single agent for the group.
      *
      * @param UnityEngine.GameObject agentTemplate
      *   The game object template used by the created agent.
      *
-     * @return Crowd.Agent
+     * @return Group.Agent
      *   The created agent.
      */
     private Agent createAgent(GameObject agentTemplate) {
@@ -119,7 +119,7 @@ namespace Wem.Crowd {
     /**
      * Clones an agent.
      *
-     * @param Crowd.Agent agent
+     * @param Group.Agent agent
      *   The agent to be cloned.
      */
     private Agent cloneAgent(Agent agent) {
