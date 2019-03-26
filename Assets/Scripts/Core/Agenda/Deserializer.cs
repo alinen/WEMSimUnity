@@ -1,5 +1,5 @@
 
-namespace Wem.Activity {
+namespace Wem.Agenda {
 
   public class Deserializer {
 

@@ -9,6 +9,8 @@ namespace Wem.Activity
 
     public Vector3 dest;
 
+    public GoTo (string id, bool isRoot = false) : base(id, isRoot) {}
+
     /*void Start() {
       this.id = "goto";
       ActivityInterface behaviour = gameObject.GetComponent<Hover> ();

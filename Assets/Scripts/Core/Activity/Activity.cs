@@ -4,41 +4,47 @@ using UnityEngine;
 
 namespace Wem.Activity {
 
-  public class Activity : ActivityInterface {
+  public class Activity : IActivity {
 
     /**
-     * The behavior ID.
+     * The activity ID.
      */
     protected string id;
 
     /**
-     * The adjacent nodes.
+     * Whether the activity is root or not.
      */
-    protected List<EdgeConfig> adjacents = new List<EdgeConfig> ();
+    public bool IsRoot {protected set; get;}
 
     /**
-     * {@inheritdoc}
+     * The adjacent nodes.
      */
-    public void AddEdge(EdgeConfig node, bool bidirectional = false) {
+    protected List<EdgeConfig> edges = new List<EdgeConfig> ();
 
-      adjacents.Add(node);
-
-      if (bidirectional) {
-        EdgeConfig config = new EdgeConfig(this, 0.5);
-
-        node.Adjacent.AddEdge(config);
-      }
+    /**
+     * Wem.Activity.Activity constructor.
+     */
+    public Activity(string id, bool isRoot = false) {
+      this.id = id;
+      this.IsRoot = isRoot;
     }
 
     /**
      * {@inheritdoc}
      */
-    public void RemoveEdge(ActivityInterface node) {
-      for (int i = 0; i < adjacents.Count; i++) {
-        ActivityInterface adjNode = adjacents[i].Adjacent;
+    public void AddEdge(EdgeConfig node) {
+      edges.Add(node);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public void RemoveEdge(IActivity node) {
+      for (int i = 0; i < edges.Count; i++) {
+        IActivity adjNode = edges[i].Adjacent;
 
         if (node.Equals(adjNode)) {
-          adjacents.RemoveAt(i);
+          edges.RemoveAt(i);
         }
       }
     }
@@ -53,8 +59,8 @@ namespace Wem.Activity {
     /**
      * {@inheritdoc}
      */
-    public List<EdgeConfig> GetAdjacents() {
-      return this.adjacents;
+    public List<EdgeConfig> GetEdges() {
+      return this.edges;
     }
 
   }

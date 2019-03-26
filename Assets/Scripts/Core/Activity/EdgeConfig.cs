@@ -2,13 +2,13 @@
 namespace Wem.Activity {
 
   public class EdgeConfig {
-    double probability;
+    //double probability;
 
-    public ActivityInterface Adjacent;
+    public IActivity Adjacent;
 
-    public EdgeConfig(ActivityInterface node, double probability) {
+    public EdgeConfig(IActivity node, double probability) {
       this.Adjacent = node;
-      this.probability = probability;
+      //this.probability = probability;
     }
 
   }
