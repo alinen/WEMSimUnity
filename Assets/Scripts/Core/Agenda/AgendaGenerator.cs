@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Wem.Activity;
+using Wem.Container;
 
 namespace Wem.Agenda {
 
@@ -10,11 +11,12 @@ namespace Wem.Agenda {
 
     IAgenda agenda = new Agenda();
 
+    public static AgendaGenerator create(IContainer container) {
+      return new AgendaGenerator();
+    }
+
     /**
      * Gets the generated agenda.
-     *
-     * @return Wem.Agenda.IAgenda
-     *   The generated agenda.
      */
     public IAgenda GetAgenda() {
       return this.agenda;
@@ -31,9 +33,6 @@ namespace Wem.Agenda {
      *   The id of the activity (passed to the class instance).
      * @param bool isRoot
      *   Whether this activity is root or not.
-     *
-     * @return Wem.Activity.IActivity
-     *   The newly created activity instance.
      *
      * @throws Wem.Activity.InvalidActivityException
      *   If the activity class does not exist.
@@ -71,10 +70,18 @@ namespace Wem.Agenda {
      *   The key in dictionary of destination activity.
      */
     public void AddEdge(string k1, string k2) {
-      IActivity a1 = GetActivity(k1);
-      IActivity a2 = GetActivity(k2);
+      IActivity a1 = this.getActivity(k1);
+      IActivity a2 = this.getActivity(k2);
 
       this.agenda.AddEdge(a1, a2);
+    }
+
+    /**
+     * Resets the generator, so a new Agenda can be created.
+     */
+    public void Reset() {
+      this.activities = new Dictionary<string, IActivity> ();
+      this.agenda = new Agenda();
     }
 
     /**
@@ -83,13 +90,10 @@ namespace Wem.Agenda {
      * @param string key
      *   The activity key.
      *
-     * @return IActivity
-     *   The associated activity.
-     *
      * @throws Wem.Activity.InvalidActivityException
      *   If key does not map to an activity.
      */
-    protected IActivity GetActivity(string key) {
+    protected IActivity getActivity(string key) {
       IActivity activity;
 
       if (!activities.TryGetValue(key, out activity)) {

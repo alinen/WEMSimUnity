@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Wem.Container;
 
 namespace Wem.Agenda {
 
@@ -8,6 +9,10 @@ namespace Wem.Agenda {
      * The container of agendas.
      */
     Dictionary<string, IAgenda> container = new Dictionary<string, IAgenda> ();
+
+    public static AgendaContainer create(IContainer container) {
+      return new AgendaContainer();
+    }
 
     /**
      * Adds an agenda to the container.
@@ -28,9 +33,6 @@ namespace Wem.Agenda {
      *
      * @param string id
      *   The agenda's ID.
-     *
-     * @return Wem.Agenda.IAgenda
-     *   The agenda to retrieve.
      */
     public IAgenda Get(string id) {
       IAgenda agenda;

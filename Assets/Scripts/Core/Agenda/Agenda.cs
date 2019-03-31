@@ -39,7 +39,7 @@ namespace Wem.Agenda {
     }
 
     /**
-     * Helper to convert agenda to string.
+     * Helper that converts agenda to string.
      *
      * @param Wem.Activity.IActivity root
      *   The root activity for the iteration.
@@ -47,9 +47,6 @@ namespace Wem.Agenda {
      *   Hash set of nodes that were already printed (to avoid infinite calls).
      * @param string indent
      *   The indentation for this iteration.
-     *
-     * @return string
-     *   A string representing the graph of activities.
      */
     private string ToStringHelper(IActivity root, HashSet<string> printedNodes, string indent = "") {
       printedNodes.Add(root.GetId());

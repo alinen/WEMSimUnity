@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Wem.Container;
 
 namespace Wem.Yaml {
 
   public class AgendaDeserializer : Deserializer {
+
+    public static AgendaDeserializer create(IContainer container) {
+      return new AgendaDeserializer();
+    }
 
     /**
      * Deserializes a list of YAML files.

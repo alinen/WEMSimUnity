@@ -6,6 +6,9 @@ namespace Wem.Yaml {
 
   abstract public class Deserializer {
 
+    /**
+     * The YAML deserializer.
+     */
     protected YamlDotNet.Serialization.Deserializer deserializer;
 
     /**
