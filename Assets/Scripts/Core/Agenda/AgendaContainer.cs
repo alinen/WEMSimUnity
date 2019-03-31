@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Wem.Agenda;
 
 namespace Wem.Agenda {
 
