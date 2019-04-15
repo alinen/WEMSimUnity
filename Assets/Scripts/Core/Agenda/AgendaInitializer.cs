@@ -44,19 +44,30 @@ namespace Wem.Agenda {
 
     /**
      * Initializes a list of agendas.
+     *
+     * @param List<string> files
+     *   List of paths to YAML files.
      */
     public void InitializeAgendas(List<string> files) {
       List<DeserializedAgenda> agendas = this.deserializer.Deserialize(files);
 
       foreach (DeserializedAgenda agenda_data in agendas) {
+        // Starts a new Agenda.
+        this.generator.Start(agenda_data.Id);
+
         IAgenda agenda = this.initializeAgenda(agenda_data);
 
-        this.container.Add(agenda_data.Name, agenda);
-
-        this.generator.Reset();
+        // Saves the generated agenda in the container.
+        this.container.Add(agenda_data.Id, agenda);
       }
     }
 
+    /**
+     * Initializes a single agenda.
+     *
+     * @param Wem.Yaml.DeserializedAgenda agenda_data
+     *   The data to initialize new agenda.
+     */
     private IAgenda initializeAgenda(DeserializedAgenda agenda_data) {
       // Creates the activity nodes.
       foreach(DeserializedActivity activity in agenda_data.Activities) {
@@ -70,9 +81,15 @@ namespace Wem.Agenda {
         }
       }
 
-      return generator.GetAgenda();
+      return this.generator.GetAgenda();
     }
 
+    /**
+     * Creates a new activity.
+     *
+     * @param Wem.Yaml.DeserializedActivity activity_data
+     *   The data to create new activity.
+     */
     private void createActivity(DeserializedActivity activity_data) {
       this.generator.NewActivity(
         activity_data.Name,

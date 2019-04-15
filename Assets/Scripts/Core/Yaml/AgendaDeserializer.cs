@@ -42,7 +42,7 @@ namespace Wem.Yaml {
       var input = deserializer.Deserialize<dynamic>(file);
 
       foreach(var agendaNode in input) {
-        agenda.Name = agendaNode.Key;
+        agenda.Id = agendaNode.Key;
 
         var activities = agendaNode.Value;
 

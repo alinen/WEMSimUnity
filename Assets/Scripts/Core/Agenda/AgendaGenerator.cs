@@ -49,7 +49,7 @@ namespace Wem.Agenda {
       IActivity activity = Activator.CreateInstance(activityType, id, isRoot) as IActivity;
       if (activity == null) {
         throw new InvalidActivityException(
-          activityClass + " does not implement Wem.Activity.IInterface");
+          activityClass + " does not implement Wem.Activity.IActivity");
       }
 
       if (isRoot) {
@@ -79,9 +79,10 @@ namespace Wem.Agenda {
     /**
      * Resets the generator, so a new Agenda can be created.
      */
-    public void Reset() {
+    public void Start(string id) {
       this.activities = new Dictionary<string, IActivity> ();
-      this.agenda = new Agenda();
+
+      this.agenda = new Agenda(id);
     }
 
     /**

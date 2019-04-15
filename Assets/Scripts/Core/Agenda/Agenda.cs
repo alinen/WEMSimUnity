@@ -6,6 +6,7 @@ namespace Wem.Agenda {
 
   public class Agenda : IAgenda {
 
+    public string Id {set;get;}
     public IActivity RootActivity {set; get;}
 
     /**
@@ -14,10 +15,10 @@ namespace Wem.Agenda {
     public Agenda() {}
 
     /**
-     * Agenda constructor.
+     * Constructor with Agenda's Id.
      */
-    public Agenda(IActivity root) {
-      RootActivity = root;
+    public Agenda(string id) {
+      this.Id = id;
     }
 
     /**
@@ -35,7 +36,7 @@ namespace Wem.Agenda {
     public override string ToString() {
       HashSet<string> printedNodes = new HashSet<string> ();
 
-      return ToStringHelper(this.RootActivity, printedNodes);
+      return this.Id + ":\n" + ToStringHelper(this.RootActivity, printedNodes);
     }
 
     /**

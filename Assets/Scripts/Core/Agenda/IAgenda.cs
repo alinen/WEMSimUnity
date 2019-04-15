@@ -4,6 +4,11 @@ namespace Wem.Agenda {
 
   public interface IAgenda {
 
+    /**
+     * The agenda's ID.
+     */
+    string Id {set;get;}
+
     IActivity RootActivity {set; get;}
 
     /**

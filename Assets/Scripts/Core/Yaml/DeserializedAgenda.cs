@@ -6,11 +6,11 @@ namespace Wem.Yaml {
    * Deserialized representation of an agenda.
    */
   public class DeserializedAgenda {
-    public string Name {get; set;}
+    public string Id {get; set;}
     public List<DeserializedActivity> Activities {get; set;}
 
     /**
-     * Agenda constructor.
+     * DeserializedAgenda constructor.
      */
     public DeserializedAgenda() {
       this.Activities = new List<DeserializedActivity> ();
@@ -29,7 +29,7 @@ namespace Wem.Yaml {
         }
       }
 
-      return Name + ":\n\t" + activities;
+      return Id + ":\n\t" + activities;
     }
   }
 
