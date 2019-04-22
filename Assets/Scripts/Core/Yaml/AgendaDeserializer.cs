@@ -12,12 +12,12 @@ namespace Wem.Yaml {
     }
 
     /**
-     * Deserializes a list of YAML files.
+     * Deserializes a list of YAML files for agendas.
      *
      * @param List<string> files
      *   The files to deserialize.
      */
-    public List<DeserializedAgenda> Deserialize(List<string> files = null) {
+    public List<DeserializedAgenda> Deserialize(List<string> files) {
 
       List<DeserializedAgenda> agendas = new List<DeserializedAgenda> ();
 
@@ -41,10 +41,10 @@ namespace Wem.Yaml {
 
       var input = deserializer.Deserialize<dynamic>(file);
 
-      foreach(var agendaNode in input) {
-        agenda.Id = agendaNode.Key;
+      foreach(var agenda_node in input) {
+        agenda.Id = agenda_node.Key;
 
-        var activities = agendaNode.Value;
+        var activities = agenda_node.Value;
 
         foreach(var activity in activities) {
           agenda.Activities.Add(this.deserializeActivity(activity));

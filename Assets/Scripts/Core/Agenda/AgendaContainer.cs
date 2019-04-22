@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Wem.Activity;
 using Wem.Container;
 
 namespace Wem.Agenda {
@@ -42,6 +44,25 @@ namespace Wem.Agenda {
       }
 
       return agenda;
+    }
+
+    /**
+     * Gets an activity from the container.
+     *
+     * @param string id
+     *   The activity's ID in the form agenda::activity.
+     */
+    public IActivity GetActivity(string id) {
+
+      string[] parts = id.Split(new[] { "::" }, StringSplitOptions.None);
+      string agenda_name = parts[0];
+      string activity_name = parts[1];
+
+      // Gets the activity.
+      IAgenda agenda = Get(agenda_name);
+      IActivity activity = agenda.GetActivity(activity_name);
+
+      return activity;
     }
 
   }

@@ -1,8 +1,14 @@
 using System.Collections.Generic;
+using Wem.Generic;
 
 namespace Wem.Activity {
 
   public interface IActivity {
+
+    /**
+     * The area where the activity can take place.
+     */
+    Area Area {set; get;}
 
     /**
      * Adds an adjacent node.

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System;
-using UnityEngine;
+using Wem.Generic;
 
 namespace Wem.Activity {
 
@@ -20,6 +20,11 @@ namespace Wem.Activity {
      * The adjacent nodes.
      */
     protected List<EdgeConfig> edges = new List<EdgeConfig> ();
+
+    /**
+     * {@inheritdoc}
+     */
+    public Area Area {set; get;}
 
     /**
      * Wem.Activity.Activity constructor.

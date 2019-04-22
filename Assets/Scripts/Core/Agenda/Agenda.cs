@@ -1,13 +1,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Wem.Activity;
+using System;
 
 namespace Wem.Agenda {
 
   public class Agenda : IAgenda {
 
+    /**
+     * A dictionary of activities for faster look ups.
+     */
+    Dictionary<string, IActivity> activities = new Dictionary<string, IActivity> ();
+
+    /**
+     * The agenda's root activity.
+     */
+    private IActivity rootActivity;
+
+    /**
+     * {@inheritdoc}
+     */
     public string Id {set;get;}
-    public IActivity RootActivity {set; get;}
+    public IActivity RootActivity {
+      get {
+        return this.rootActivity;
+      }
+      set {
+        this.AddToDictionary(value);
+
+        this.rootActivity = value;
+      }
+    }
 
     /**
      * Base constructor.
@@ -28,6 +51,21 @@ namespace Wem.Agenda {
       EdgeConfig config = new EdgeConfig(a2, 0.5);
 
       a1.AddEdge(config);
+
+      // Adds the node to the dictionary.
+      AddToDictionary(a2);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public IActivity GetActivity(string id) {
+      IActivity activity;
+      if (!activities.TryGetValue(id, out activity)) {
+        throw new InvalidActivityException("Activity " + id + " was not found.");
+      }
+
+      return activity;
     }
 
     /**
@@ -37,6 +75,19 @@ namespace Wem.Agenda {
       HashSet<string> printedNodes = new HashSet<string> ();
 
       return this.Id + ":\n" + ToStringHelper(this.RootActivity, printedNodes);
+    }
+
+    /**
+     * Adds activity to dictionary.
+     *
+     * @param Wem.Activity.IActivity value
+     *   The activity to add.
+     */
+    private void AddToDictionary(IActivity value) {
+      IActivity activity;
+      if (!activities.TryGetValue(value.GetId(), out activity)) {
+        activities.Add(value.GetId(), value);
+      }
     }
 
     /**
