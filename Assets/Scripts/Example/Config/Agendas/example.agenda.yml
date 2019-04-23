@@ -1,16 +1,14 @@
 example.agenda:
-  hover.activity:
-    id: hover
+  order.activity:
+    id: order
     is_root: true
     behavior_tree: ''
     class: Wem.Activity.Hover
     adjacents:
-      - hover.activity
-      - goto.activity
+      - pickup.activity
+      - order.activity
 
-  goto.activity:
-    id: goto
+  pickup.activity:
+    id: pickup
     behavior_tree: ''
     class: Wem.Activity.GoTo
-    adjacents:
-      - hover.activity

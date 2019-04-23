@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Wem.Activity;
 using Wem.Container;
+using Wem.Yaml;
 
 namespace Wem.Agenda {
 
@@ -47,7 +48,19 @@ namespace Wem.Agenda {
     }
 
     /**
-     * Gets an activity from the container.
+     * Gets an activity from the container by string id.
+     *
+     * @param Wem.Yaml.ActivityRef activiy
+     *   The activity's reference.
+     */
+    public IActivity GetActivity(ActivityRef activity) {
+      IAgenda agenda = this.Get(activity.Agenda);
+
+      return agenda.GetActivity(activity.Activity);
+    }
+
+    /**
+     * Gets an activity from the container by string id.
      *
      * @param string id
      *   The activity's ID in the form agenda::activity.

@@ -85,8 +85,8 @@ namespace Wem.Agenda {
      */
     private void AddToDictionary(IActivity value) {
       IActivity activity;
-      if (!activities.TryGetValue(value.GetId(), out activity)) {
-        activities.Add(value.GetId(), value);
+      if (!activities.TryGetValue(value.Id, out activity)) {
+        activities.Add(value.Id, value);
       }
     }
 
@@ -101,12 +101,12 @@ namespace Wem.Agenda {
      *   The indentation for this iteration.
      */
     private string ToStringHelper(IActivity root, HashSet<string> printedNodes, string indent = "") {
-      printedNodes.Add(root.GetId());
+      printedNodes.Add(root.Id);
 
       string s = "";
 
       if (root.Equals(RootActivity)) {
-        s += indent + root.GetId() + " -> \n";
+        s += indent + root.Id + " at " + root.Area.Id + " -> \n";
       }
 
       indent += "  ";
@@ -114,11 +114,11 @@ namespace Wem.Agenda {
       foreach (var edge in root.GetEdges()) {
         IActivity adj = edge.Adjacent;
 
-        s += indent + adj.GetId();
+        s +=  indent + adj.Id + " at " + adj.Area.Id;
 
         // Only prints the children of the adjacent node if they were not
         // previously printed.
-        if (!printedNodes.Contains(adj.GetId())) {
+        if (!printedNodes.Contains(adj.Id)) {
           if(adj.GetEdges().Count > 0) {
             s += " -> ";
           }

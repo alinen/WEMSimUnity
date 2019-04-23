@@ -1,14 +1,25 @@
 using System.Collections.Generic;
 using Wem.Generic;
+using Wem.Map;
 
 namespace Wem.Activity {
 
   public interface IActivity {
 
     /**
+     * The ID of the activity.
+     */
+    string Id {get;}
+
+    /**
      * The area where the activity can take place.
      */
-    Area Area {set; get;}
+    Area Area {get; set;}
+
+    /**
+     * The previous actitivy.
+     */
+    string Link {get; set;}
 
     /**
      * Adds an adjacent node.
@@ -25,14 +36,6 @@ namespace Wem.Activity {
      *   The adjacent node to remove.
      */
     void RemoveEdge(IActivity node);
-
-    /**
-     * Gets the activity ID.
-     *
-     * @return string
-     *   The activity ID.
-     */
-    string GetId();
 
     /**
      * Gets all the edges.

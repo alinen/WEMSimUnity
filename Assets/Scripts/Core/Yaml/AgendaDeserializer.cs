@@ -76,9 +76,13 @@ namespace Wem.Yaml {
       }
 
       // Gets adjacent nodes.
-      List<object> adjacents = (List<object>) settings["adjacents"];
-      foreach(var adj in adjacents) {
-        activity.Adjacents.Add(adj.ToString());
+      object adjacents;
+      if (settings.TryGetValue("adjacents", out adjacents)) {
+
+        foreach(var adj in (List<object>)adjacents) {
+          activity.Adjacents.Add(adj.ToString());
+        }
+
       }
 
       return activity;

@@ -1,20 +1,11 @@
 using System.Collections.Generic;
 using System;
 using Wem.Generic;
+using Wem.Map;
 
 namespace Wem.Activity {
 
   public class Activity : IActivity {
-
-    /**
-     * The activity ID.
-     */
-    protected string id;
-
-    /**
-     * Whether the activity is root or not.
-     */
-    public bool IsRoot {protected set; get;}
 
     /**
      * The adjacent nodes.
@@ -22,15 +13,31 @@ namespace Wem.Activity {
     protected List<EdgeConfig> edges = new List<EdgeConfig> ();
 
     /**
+     * Whether the activity is root or not.
+     */
+    public bool IsRoot {protected set; get;}
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public string Id {get; protected set;}
+
+    /**
      * {@inheritdoc}
      */
     public Area Area {set; get;}
 
     /**
+     * {@inheritdoc}
+     */
+    public string Link {get; set;}
+
+    /**
      * Wem.Activity.Activity constructor.
      */
     public Activity(string id, bool isRoot = false) {
-      this.id = id;
+      this.Id = id;
       this.IsRoot = isRoot;
     }
 
@@ -52,13 +59,6 @@ namespace Wem.Activity {
           edges.RemoveAt(i);
         }
       }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public string GetId() {
-      return this.id;
     }
 
     /**

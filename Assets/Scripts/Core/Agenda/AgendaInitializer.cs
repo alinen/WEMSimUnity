@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Wem.Activity;
 using Wem.Container;
 using Wem.Yaml;
+using Wem.Map;
 
 namespace Wem.Agenda {
 
@@ -22,11 +23,17 @@ namespace Wem.Agenda {
      */
     protected AgendaDeserializer deserializer;
 
+    /**
+     * The simulation map.
+     */
+    protected Map.Map map;
+
     public static AgendaInitializer create(IContainer container) {
       return new AgendaInitializer(
         (AgendaContainer) container.Get("agenda.container"),
         (AgendaGenerator) container.Get("agenda.generator"),
-        (AgendaDeserializer) container.Get("yaml.agenda.deserializer")
+        (AgendaDeserializer) container.Get("yaml.agenda.deserializer"),
+        (Map.Map) container.Get("map")
       );
     }
 
@@ -35,11 +42,13 @@ namespace Wem.Agenda {
      */
     public AgendaInitializer(AgendaContainer container,
                              AgendaGenerator generator,
-                             AgendaDeserializer deserializer) {
+                             AgendaDeserializer deserializer,
+                             Map.Map map) {
 
       this.container = container;
       this.generator = generator;
       this.deserializer = deserializer;
+      this.map = map;
     }
 
     /**
@@ -48,7 +57,7 @@ namespace Wem.Agenda {
      * @param List<string> files
      *   List of paths to YAML files.
      */
-    public void InitializeAgendas(List<string> files) {
+    public void Initialize(List<string> files) {
       List<DeserializedAgenda> agendas = this.deserializer.Deserialize(files);
 
       foreach (DeserializedAgenda agenda_data in agendas) {
@@ -60,6 +69,8 @@ namespace Wem.Agenda {
         // Saves the generated agenda in the container.
         this.container.Add(agenda_data.Id, agenda);
       }
+
+      this.associateArea();
     }
 
     /**
@@ -97,6 +108,22 @@ namespace Wem.Agenda {
         activity_data.Id,
         activity_data.IsRoot
       );
+    }
+
+    /**
+     * Associates an activity to an area.
+     */
+    private void associateArea() {
+      // Goes through each area in the map.
+      foreach (Area area in this.map.Areas) {
+
+        // For each activity allowed in the area, add a reference int the
+        // activity.
+        foreach (ActivityRef activity in area.Activities) {
+          this.container.GetActivity(activity).Area = area;
+        }
+
+      }
     }
 
   }
