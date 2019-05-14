@@ -1,0 +1,484 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\AnchorNotFoundException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\CharacterAnalyzer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Constants.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Cursor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Emitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\EmitterState.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\AnchorAlias.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\Comment.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\DocumentEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\DocumentStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\EventType.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\IParsingEventVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\MappingEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\MappingStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\MappingStyle.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\NodeEvent.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\ParsingEvent.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\Scalar.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\SequenceEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\SequenceStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\SequenceStyle.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\StreamEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Events\StreamStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\FakeList.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\ForwardAnchorNotSupportedException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\HashCode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\IEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\ILookAheadBuffer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\InsertionQueue.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\IParser.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\IScanner.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\LookAheadBuffer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Mark.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\MaximumRecursionLevelReachedException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\MergingParser.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Parser.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\ParserExtensions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\ParserState.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\RecursionLevel.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\ScalarStyle.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Scanner.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\SemanticErrorException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\SimpleKey.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\StringLookAheadBuffer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\SyntaxErrorException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\TagDirectiveCollection.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Anchor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\AnchorAlias.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\BlockEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\BlockEntry.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\BlockMappingStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\BlockSequenceStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Comment.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\DocumentEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\DocumentStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\FlowEntry.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\FlowMappingEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\FlowMappingStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\FlowSequenceEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\FlowSequenceStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Key.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Scalar.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\StreamEnd.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\StreamStart.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Tag.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\TagDirective.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Token.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\Value.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Tokens\VersionDirective.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\Version.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Core\YamlException.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\ConvertYamlToJson.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\DeserializeObjectGraph.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\DeserializingMultipleDocuments.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\Helpers\ExampleRunner.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\Helpers\SampleAttribute.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\Helpers\TestOutputHelperExtensions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\LoadingAYamlStream.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Examples\SerializeObjectGraph.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Helpers\ExpressionExtensions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Helpers\GenericCollectionToNonGenericAdapter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Helpers\GenericDictionaryToNonGenericAdapter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Helpers\ITestOutputHelper.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Helpers\Portability.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\DocumentLoadingState.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\EmitterState.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\IYamlVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlAliasNode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlDocument.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlMappingNode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlNode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlNodeIdentityEqualityComparer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlNodeType.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlScalarNode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlSequenceNode.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlStream.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\RepresentationModel\YamlVisitorBase.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\BuilderSkeleton.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Converters\DateTimeConverter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Converters\GuidConverter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Deserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\DeserializerBuilder.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EmissionPhaseObjectGraphVisitorArgs.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventEmitters\ChainedEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventEmitters\CustomTagEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventEmitters\JsonEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventEmitters\TypeAssigningEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventEmitters\WriterEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\EventInfo.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IAliasProvider.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IEventEmitter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\INamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\INodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\INodeTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IObjectDescriptor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IObjectFactory.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IObjectGraphTraversalStrategy.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IPropertyDescriptor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IRegistrationLocationSelectionSyntax.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ITypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ITypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IValueDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IValuePromise.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IValueSerializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IYamlConvertible.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IYamlSerializable.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\IYamlTypeConverter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\LazyComponentRegistrationList.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\LazyComponentRegistrationListExtensions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NamingConventions\CamelCaseNamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NamingConventions\HyphenatedNamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NamingConventions\NullNamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NamingConventions\PascalCaseNamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NamingConventions\UnderscoredNamingConvention.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\ArrayNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\CollectionNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\DictionaryNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\EnumerableNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\NullNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\ObjectNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\ScalarNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\TypeConverterNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\YamlConvertibleNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeDeserializers\YamlSerializableNodeDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeTypeResolvers\DefaultContainersNodeTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeTypeResolvers\TagNodeTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeTypeResolvers\TypeNameInTagNodeTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeTypeResolvers\YamlConvertibleTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\NodeTypeResolvers\YamlSerializableTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Nothing.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectDescriptor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectFactories\DefaultObjectFactory.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectFactories\LambdaObjectFactory.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphTraversalStrategies\FullObjectGraphTraversalStrategy.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphTraversalStrategies\RoundtripObjectGraphTraversalStrategy.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\AnchorAssigner.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\AnchorAssigningObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\ChainedObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\CustomSerializationObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\DefaultExclusiveObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\EmittingObjectGraphVisitor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ObjectGraphVisitors\PreProcessingPhaseObjectGraphVisitorSkeleton.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\PropertyDescriptor.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\SerializationOptions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Serializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\SerializerBuilder.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\StreamFragment.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TagMappings.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeInspectors\CachedTypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeInspectors\NamingConventionTypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeInspectors\ReadableAndWritablePropertiesTypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeInspectors\ReadablePropertiesTypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeInspectors\TypeInspectorSkeleton.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeResolvers\DynamicTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\TypeResolvers\StaticTypeResolver.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\IPostDeserializationCallback.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\ObjectAnchorCollection.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\ReflectionUtility.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\SerializerState.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\StringExtensions.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\Utilities\TypeConverter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ValueDeserializers\AliasValueDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\ValueDeserializers\NodeValueDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlAttributeOverrides.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlAttributeOverridesInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlAttributesTypeInspector.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlFormatter.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlIgnoreAttribute.cs" />
+     <Compile Include="..\Unity\Assets\Plugins\YamlDotNet\Serialization\YamlMember.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <Compile Include="..\Unity\Assets\Scripts\Behaviours\GoTo.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Behaviours\Hover.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\Activity.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\ActivityException.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\EdgeConfig.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\GoTo.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\Hover.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Activity\IActivity.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\Agenda.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\AgendaContainer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\AgendaException.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\AgendaGenerator.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\AgendaInitializer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Agenda\IAgenda.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Container\Container.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Container\ContainerException.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Container\ContainerInitializer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Container\IContainer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Generic\Vector2.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Group\Agent.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Group\AgentConfig.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Group\GroupConfiguration.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Group\GroupManager.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Map\Area.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Map\IMap.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Map\Map.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Map\MapInitializer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Simulation\SimulationManager.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Yaml\AgendaDeserializer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Yaml\DeserializedAgenda.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Yaml\DeserializedMap.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Yaml\Deserializer.cs" />
+     <Compile Include="..\Unity\Assets\Scripts\Core\Yaml\MapDeserializer.cs" />
+ <Reference Include="UnityEditor.StandardEvents">
+ <HintPath>/home/gvso/Desktop/WEMSimUnity/Unity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>/home/gvso/Desktop/WEMSimUnity/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>/home/gvso/Desktop/WEMSimUnity/Unity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>/home/gvso/Desktop/WEMSimUnity/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AIModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ARModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AccessibilityModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AnimationModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AssetBundleModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AudioModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.BaselibModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClothModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CloudWebServicesModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClusterInputModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClusterRendererModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CoreModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CrashReportingModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DirectorModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FacebookModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FileSystemHttpModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GameCenterModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GridModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HotReloadModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.IMGUIModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ImageConversionModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.JSONSerializeModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.LocalizationModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticleSystemModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticlesLegacyModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceReportingModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PhysicsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Physics2DModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ProfilerModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ScreenCaptureModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SharedInternalsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTrackingModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteMaskModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteShapeModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StreamingModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StyleSheetsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SubstanceModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TLSModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainPhysicsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextRenderingModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TilemapModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TimelineModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UNETModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UmbraModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityAnalyticsModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityConnectModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VRModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VehiclesModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VideoModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WindModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XRModule">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Locator">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/Managed/Unity.Locator.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GoogleAudioSpatializer">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/home/gvso/.config/unity3d/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StandardEvents">
+ <HintPath>/home/gvso/.config/unity3d/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="mscorlib">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
+ </Reference>
+ <Reference Include="System">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Core">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.Linq">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript.Lang">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Lang">
+ <HintPath>/home/gvso/Unity-2018.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+
+</Project>

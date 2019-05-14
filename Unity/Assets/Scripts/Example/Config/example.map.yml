@@ -1,0 +1,16 @@
+example.map:
+  order1.area:
+    coordinates:
+      - -50,50
+      - 0,0
+    activities:
+      - example.agenda::order
+    link: pickup1.area|example.agenda::pickup
+
+  pickup1.area:
+    coordinates:
+      - -50,0
+      - 0,-20
+    activities:
+      - example.agenda::pickup
+
